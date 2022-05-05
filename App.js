@@ -12,7 +12,7 @@ import React from 'react';
 const App = () => {
   return (
     <View>
-      <Text>123</Text>
+      <Text>1</Text>
     </View>
   );
 };
