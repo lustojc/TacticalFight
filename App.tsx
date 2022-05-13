@@ -7,16 +7,22 @@
  */
 
 import React from 'react';
-import {Text, SafeAreaView} from 'react-native';
-import { Sirena } from './src/components/UnitsClasses/Paralizers/Sirena';
+import {ImageBackground, SafeAreaView} from 'react-native';
+
+import Field from './src/components/Field/Field';
+
+import {CreateTeams} from './gameLogic/core/teams/createTeams';
 
 const App = () => {
+  const {firstTeam, secondTeam} = CreateTeams();
 
-  let sirena = new Sirena()
-  
+  let background = require('./src/assets/img/background.jpg');
+
   return (
     <SafeAreaView>
-      <Text>{sirena.name}</Text>
+      <ImageBackground source={background}>
+        <Field firstTeam={firstTeam} secondTeam={secondTeam} />
+      </ImageBackground>
     </SafeAreaView>
   );
 };
